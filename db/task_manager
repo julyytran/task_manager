@@ -9,4 +9,7 @@ tasks:
 - id: 3
   title: buy groceries
   description: milk
-total: 3
+- id: 4
+  title: submit task manager
+  description: updated class methods to instance methods
+total: 4
