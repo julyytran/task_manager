@@ -1,6 +1,15 @@
+<div class="text-center">
+
+<form class="form-horizontal">
+<div class="form-group">
 <form action="/tasks" method="post">
-  <p>Enter a new task:</p>
-  <input type='text' name='task[title]'/><br/>
-  <textarea name='task[description]'></textarea><br/>
-  <input type='submit'/>
+  <h1>Enter a new task:</h1>
+  <input class="form-control input-lg" type='text' name='task[title]'/><br/>
+</div>
+
+<div class="form-group">
+  <textarea class="form-control" rows="3" name='task[description]'></textarea><br/>
+  <input class='btn btn-success' type='submit'/>
+</div>
 </form>
+</div>
