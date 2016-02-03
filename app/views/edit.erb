@@ -1,15 +1,7 @@
-<div class="text-center">
-
-<form class="form-horizontal">
-<div class="form-group">
-<form action="/tasks" method="post">
+<form action="/tasks/<%= @task.id %>" method="post">
   <h1>Edit a task:</h1>
-  <input class="form-control input-lg" type='text' name='task[title]' value= '<% @task.tile %>'/><br/>
-</div>
-
-<div class="form-group">
-  <textarea class="form-control" rows="3" name='task[description]'></textarea><br/>
+  <input type="hidden" name="_method" value="PUT" />
+  <input class="form-control input-lg" type='text' name='task[title]' value="<%= @task.title %>"/><br/>
+  <textarea class="form-control" rows="3" name='task[description]'><%= @task.description %></textarea><br/>
   <input class='btn btn-success' type='submit'/>
-</div>
 </form>
-</div>
