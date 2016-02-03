@@ -2,15 +2,13 @@ require_relative '../test_helper'
 
 class TaskManagerTest < Minitest::Test
   include TestHelpers
-  attr_reader :data
 
   def create_task(number)
-    @data = {
-      title: 'my task',
-      description: 'cool task'
-    }
-
-    number.times do
+    number.times do |i|
+      data = {
+        title: "my task #{i+1}",
+        description: "cool task #{i+1}"
+      }
       task_manager.create(data)
     end
   end
@@ -20,8 +18,8 @@ class TaskManagerTest < Minitest::Test
     task = task_manager.all.first
 
     assert task.id
-    assert_equal 'my task', task.title
-    assert_equal 'cool task', task.description
+    assert_equal 'my task 1', task.title
+    assert_equal 'cool task 1', task.description
   end
 
   def test_can_return_all_tasks
@@ -29,14 +27,16 @@ class TaskManagerTest < Minitest::Test
     all = task_manager.all
 
     assert_equal 3, all.length
-    assert_equal Task, all.first.class
+    all.each do |task|
+      assert_kind_of Task, task
+    end
   end
 
   def test_can_find_specific_task_from_id
     create_task(3)
-    task = task_manager.find(1)
+    task = task_manager.find(2)
 
-    assert_equal 1, task.id
+    assert_equal 2, task.id
   end
 
   def test_can_update_a_specific_task
@@ -48,8 +48,8 @@ class TaskManagerTest < Minitest::Test
     task_id = task_manager.all.last.id
     task = task_manager.find(task_id)
 
-    assert_equal 'my task', task.title
-    assert_equal 'cool task', task.description
+    assert_equal 'my task 1', task.title
+    assert_equal 'cool task 1', task.description
 
     task_manager.update(1, new_data)
     task = task_manager.find(task_id)
