@@ -12,4 +12,10 @@ tasks:
 - id: 4
   title: submit task manager
   description: updated class methods to instance methods
-total: 4
+- id: 5
+  title: test
+  description: omg test
+- id: 6
+  title: test2
+  description: omg moar tests
+total: 6
