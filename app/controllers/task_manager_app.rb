@@ -1,8 +1,6 @@
-require 'models/task_manager'
+require 'yaml/store'
 
 class TaskManagerApp < Sinatra::Base
-  set :root, File.expand_path("..", __dir__)
-  set :method_override, true
 
   get '/' do
     erb :dashboard
@@ -46,5 +44,5 @@ class TaskManagerApp < Sinatra::Base
     task_manager.delete(id.to_i)
     redirect '/tasks'
   end
-        
+
 end
