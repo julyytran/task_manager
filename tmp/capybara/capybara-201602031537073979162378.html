@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="text-center">
+<h1>All Tasks</h1>
+
+<ol id='tasks'>
+  <h3>1: <a href="/tasks/1">The Newest Task</a></h3>
+  <a href="/tasks/1/edit">Edit</a>
+  <form action="/tasks/1" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input class='btn btn-danger'type="submit" value="delete"/>
+  </form>
+</ol>
+</div>
+
+  </div>
+</body>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</html>

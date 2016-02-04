@@ -1,7 +1,7 @@
 <div class="text-center">
-
 <h1>All Tasks</h1>
 
+<ol id='tasks'>
 <% @tasks.each do |task| %>
   <h3><%= task.id %>: <a href="/tasks/<%= task.id %>"><%= task.title %></a></h3>
   <a href="/tasks/<%= task.id %>/edit">Edit</a>
@@ -10,4 +10,5 @@
     <input class='btn btn-danger'type="submit" value="delete"/>
   </form>
 <% end %>
+</ol>
 </div>
